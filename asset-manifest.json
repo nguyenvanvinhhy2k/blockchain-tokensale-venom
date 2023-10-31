@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/blockchain-tokensale-venom/static/css/main.8be2adf9.css",
+    "main.js": "/blockchain-tokensale-venom/static/js/main.376d8ebf.js",
+    "static/js/787.9bfe044a.chunk.js": "/blockchain-tokensale-venom/static/js/787.9bfe044a.chunk.js",
+    "static/media/nekoton_wasm_bg.wasm": "/blockchain-tokensale-venom/static/media/nekoton_wasm_bg.4cc8fd3bc20e213aaae3.wasm",
+    "index.html": "/blockchain-tokensale-venom/index.html",
+    "static/media/log-out.svg": "/blockchain-tokensale-venom/static/media/log-out.d9b838f66153023c2f8d5f5020f91078.svg",
+    "main.8be2adf9.css.map": "/blockchain-tokensale-venom/static/css/main.8be2adf9.css.map",
+    "main.376d8ebf.js.map": "/blockchain-tokensale-venom/static/js/main.376d8ebf.js.map",
+    "787.9bfe044a.chunk.js.map": "/blockchain-tokensale-venom/static/js/787.9bfe044a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8be2adf9.css",
+    "static/js/main.376d8ebf.js"
+  ]
+}
