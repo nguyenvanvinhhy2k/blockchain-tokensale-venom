@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { VenomConnect } from 'venom-connect';
 import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
+import { toast } from "react-hot-toast";
 
 
 import BigNumber from 'bignumber.js';
 
 import tokenSaleAbi from '../abi/Tokensale.abi.json';
+import LoadingClaim from './LoadingClaim';
 
 type Props = {
   balance: string | undefined;
@@ -16,6 +18,7 @@ type Props = {
 };
 
 function SaleForm({ balance, venomConnect, address, provider, getBalance }: Props) {
+  const [isLoadingClaim, setIsLoadingClaim] = useState<any>(false)
   const [listNfts, setListNft] = useState<any>([
     { id: 1, title: 'VenomChads X Goofies', img: 'https://assets.grinding.today:443/grinding/upload-quest/1000051982png1698732919920.png', amout: 1 },
     { id: 2, title: 'Explore Venom 🤝 Ventory', img: 'https://assets.grinding.today:443/grinding/upload-quest/56b3d9fa-b5e9-465f-bc41-425a92f6b283jpg1698718857938.jpg', amout: 2 },
@@ -32,14 +35,12 @@ function SaleForm({ balance, venomConnect, address, provider, getBalance }: Prop
     const userAddress = new Address(address);
     const contractAddress = new Address("0:f7f774822ecae908306caae05c973f743dc0baf1e7529256feb5be93dab0ee2c");
     const deposit = new BigNumber(amout).multipliedBy(10 ** 8).toString();
-    console.log('deposit :>> ', deposit);
 
     const contract = new provider.Contract(tokenSaleAbi, contractAddress);
 
     const amount = new BigNumber(deposit).plus(new BigNumber(1).multipliedBy(10 ** 9)).toString();
-    console.log('amount :>> ', amount);
     try {
-
+      setIsLoadingClaim(true)
       const result = await contract.methods
         .buyTokens({
           deposit,
@@ -49,16 +50,19 @@ function SaleForm({ balance, venomConnect, address, provider, getBalance }: Prop
           amount,
           bounce: true,
         });
-        console.log('re :>> ', result);
       if (result?.id?.lt && result?.endStatus === 'active') {
         getBalance(address);
+        toast.success('Mint success!!');
       }
     } catch (e) {
       console.error(e);
+    } finally {
+      setIsLoadingClaim(false)
     }
   };
   return (
     <>
+     <LoadingClaim isLoadingClaim={isLoadingClaim} />
       <h1 className='text-[40px] text-red-500 font-semibold'>My Venom Crowdsale</h1>
       <div className="my-[10px]">
         <span>My Token Balance: </span>
