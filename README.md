@@ -1,4 +1,4 @@
-# Link deloy: https://nguyenvanvinhhy2k.github.io/blockchain-tokensales-venom
+# Link deloy: https://nguyenvanvinhhy2k.github.io/blockchain-tokensale-venom
 
 # Getting Started with Create React App
 
