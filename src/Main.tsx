@@ -1,18 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { VenomConnect } from 'venom-connect';
-import tokenRootAbi from './abi/TokenRoot.abi.json';
-import tokenWalletAbi from './abi/TokenWallet.abi.json';
 import LogOutImg from './style/img/log-out.svg';
 import ConnectWallet from './components/ConnectWallet'
-import { Address, ProviderRpcClient } from 'everscale-inpage-provider';
 import SaleForm from './components/SaleForm';
 
 type Props = {
   venomConnect: VenomConnect | undefined;
-};
-
-export const formatVenomBalance = (value: any) => {
-  return Number(value || 0) / 10 ** 9;
 };
 
 function Main({ venomConnect }: Props) {
@@ -27,6 +20,12 @@ function Main({ venomConnect }: Props) {
     return providerState?.permissions.accountInteraction?.address?.toString();
   };
 
+  
+  // Fomart $$ VENOM
+  const formatVenomBalance = (value: any) => {
+    return Number(value || 0) / 10 ** 9
+  };
+
   // Mọi tương tác với ví venom (bao gồm tìm nạp địa chỉ) đều cần được xác thực
   const checkAuth = async (_venomConnect: any) => {
     const auth = await _venomConnect?.checkAuth();
@@ -38,7 +37,7 @@ function Main({ venomConnect }: Props) {
     if (!venomConnect) return;
       try {
           const response = await provider?.getBalance(address);
-          setBalance(formatVenomBalance(response))
+          setBalance(formatVenomBalance(response).toFixed(1))
       } catch (e) {
         console.error(e);
       }

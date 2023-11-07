@@ -1,4 +1,3 @@
-import React from 'react';
 import { VenomConnect } from 'venom-connect';
 
 type Props = {
@@ -10,6 +9,7 @@ function ConnectWallet({ venomConnect }: Props) {
     if (!venomConnect) return;
     await venomConnect.connect();
   };
+  
   return (
     <div className='pt-[40px]'>
         <h1 className='text-[40px] font-semibold'>My Venom Crowdsale</h1>

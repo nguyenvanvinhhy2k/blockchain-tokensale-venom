@@ -53,9 +53,12 @@ function SaleForm({ balance, venomConnect, address, provider, getBalance }: Prop
       if (result?.id?.lt && result?.endStatus === 'active') {
         getBalance(address);
         toast.success('Mint success!!');
+      } else {
+        toast.error('Mint fail!!');
       }
     } catch (e) {
       console.error(e);
+      setIsLoadingClaim(false)
     } finally {
       setIsLoadingClaim(false)
     }
@@ -66,7 +69,7 @@ function SaleForm({ balance, venomConnect, address, provider, getBalance }: Prop
       <h1 className='text-[40px] text-red-500 font-semibold'>My Venom Crowdsale</h1>
       <div className="my-[10px]">
         <span>My Token Balance: </span>
-        <b className='font-bold'>{balance}</b>
+        <b className='font-bold'>{balance} VENOM</b>
       </div>
       <div className="grid grid-cols-4 gap-6 w-[60%] m-auto mt-[30px] pb-[50px]">
         {listNfts?.map((item: any) => {
@@ -107,7 +110,7 @@ function SaleForm({ balance, venomConnect, address, provider, getBalance }: Prop
                   <div className="flex rounded-[26px] justify-between items-center text-[14px]">
                     <div className="flex">
                       <div className="bg-bgOpacity rounded-[26px] px-[12px] font-bold py-[5px] mr-[8px] flex items-center">
-                        Amout: {item.amout}$
+                        Amout: {item.amout} VENOM
                       </div>
                     </div>
 

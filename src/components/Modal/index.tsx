@@ -24,7 +24,7 @@ const Modal = ({
 }: ModalProps) => {
   if (typeof window === 'object') {
     // Check if document is finally loaded
-    return ReactDOM.createPortal(
+    return ReactDOM.createPortal( 
       <React.Fragment>
         {open && (
           <div className="fixed w-screen h-screen left-0 right-0 bottom-0 top-0 flex justify-center items-center z-[1000] text-[#fff]">
