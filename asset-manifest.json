@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/blockchain-tokensale-venom/static/css/main.c2305454.css",
+    "main.css": "/blockchain-tokensale-venom/static/css/main.025a1239.css",
     "main.js": "/blockchain-tokensale-venom/static/js/main.637b7b66.js",
     "static/js/787.9bfe044a.chunk.js": "/blockchain-tokensale-venom/static/js/787.9bfe044a.chunk.js",
     "static/media/nekoton_wasm_bg.wasm": "/blockchain-tokensale-venom/static/media/nekoton_wasm_bg.4cc8fd3bc20e213aaae3.wasm",
     "index.html": "/blockchain-tokensale-venom/index.html",
     "static/media/log-out.svg": "/blockchain-tokensale-venom/static/media/log-out.d9b838f66153023c2f8d5f5020f91078.svg",
-    "main.c2305454.css.map": "/blockchain-tokensale-venom/static/css/main.c2305454.css.map",
+    "main.025a1239.css.map": "/blockchain-tokensale-venom/static/css/main.025a1239.css.map",
     "main.637b7b66.js.map": "/blockchain-tokensale-venom/static/js/main.637b7b66.js.map",
     "787.9bfe044a.chunk.js.map": "/blockchain-tokensale-venom/static/js/787.9bfe044a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2305454.css",
+    "static/css/main.025a1239.css",
     "static/js/main.637b7b66.js"
   ]
 }
