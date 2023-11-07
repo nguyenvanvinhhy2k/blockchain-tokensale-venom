@@ -20,14 +20,14 @@ type Props = {
 function SaleForm({ balance, venomConnect, address, provider, getBalance }: Props) {
   const [isLoadingClaim, setIsLoadingClaim] = useState<any>(false)
   const [listNfts, setListNft] = useState<any>([
-    { id: 1, title: 'VenomChads X Goofies', img: 'https://assets.grinding.today:443/grinding/upload-quest/1000051982png1698732919920.png', amout: 1 },
-    { id: 2, title: 'Explore Venom 🤝 Ventory', img: 'https://assets.grinding.today:443/grinding/upload-quest/56b3d9fa-b5e9-465f-bc41-425a92f6b283jpg1698718857938.jpg', amout: 2 },
-    { id: 3, title: 'Bear Shop Refill', img: 'https://assets.grinding.today:443/grinding/upload-quest/texto-del-parrafopng1698704776321.png', amout: 4 },
-    { id: 4, title: 'GM Scroll! A journey into the Scroll Mainnet with unique quests.', img: 'https://assets.grinding.today:443/grinding/upload-quest/image_2023-10-30_19-45-49png1698669995862.png', amout: 3 },
-    { id: 5, title: 'Scroll Origins NFT: Celebrating Scroll Mainnet Launch', img: 'https://assets.grinding.today:443/grinding/upload-quest/366png1698399763913.png', amout: 1 },
-    { id: 6, title: 'Sticks & Stones', img: 'https://assets.grinding.today:443/grinding/upload-quest/1000023248jpg1698390368070.jpg', amout: 2 },
-    { id: 7, title: 'BASE INTRODUCED NFT Holders.', img: 'https://assets.grinding.today:443/grinding/upload-quest/screenshot-108png1698381711271.png', amout: 4 },
-    { id: 8, title: 'VENOMS OF VENOM X MAYHEM', img: 'https://assets.grinding.today:443/grinding/upload-quest/b3c8d250-02ab-4c47-b318-1e07718c4dfewebp1698362991119.webp', amout: 5 }
+    { id: 1, title: 'VenomChads X Goofies', img: 'https://assets.grinding.today:443/grinding/upload-quest/1000051982png1698732919920.png', amout: 10, price: 1 },
+    { id: 2, title: 'Explore Venom 🤝 Ventory', img: 'https://assets.grinding.today:443/grinding/upload-quest/56b3d9fa-b5e9-465f-bc41-425a92f6b283jpg1698718857938.jpg', amout: 20, price: 2 },
+    { id: 3, title: 'Bear Shop Refill', img: 'https://assets.grinding.today:443/grinding/upload-quest/texto-del-parrafopng1698704776321.png', amout: 40, price: 4 },
+    { id: 4, title: 'GM Scroll! A journey into the Scroll Mainnet with unique quests.', img: 'https://assets.grinding.today:443/grinding/upload-quest/image_2023-10-30_19-45-49png1698669995862.png', amout: 30, price: 3 },
+    { id: 5, title: 'Scroll Origins NFT: Celebrating Scroll Mainnet Launch', img: 'https://assets.grinding.today:443/grinding/upload-quest/366png1698399763913.png', amout: 10, price: 1 },
+    { id: 6, title: 'Sticks & Stones', img: 'https://assets.grinding.today:443/grinding/upload-quest/1000023248jpg1698390368070.jpg', amout: 20, price: 2 },
+    { id: 7, title: 'BASE INTRODUCED NFT Holders.', img: 'https://assets.grinding.today:443/grinding/upload-quest/screenshot-108png1698381711271.png', amout: 40, price: 4 },
+    { id: 8, title: 'VENOMS OF VENOM X MAYHEM', img: 'https://assets.grinding.today:443/grinding/upload-quest/b3c8d250-02ab-4c47-b318-1e07718c4dfewebp1698362991119.webp', amout: 50, price: 5 }
   ])
 
   const buyTokens = async ( amout: any) => {
@@ -110,7 +110,7 @@ function SaleForm({ balance, venomConnect, address, provider, getBalance }: Prop
                   <div className="flex rounded-[26px] justify-between items-center text-[14px]">
                     <div className="flex">
                       <div className="bg-bgOpacity rounded-[26px] px-[12px] font-bold py-[5px] mr-[8px] flex items-center">
-                        Amout: {item.amout} VENOM
+                        Amout: {item.price} VENOM
                       </div>
                     </div>
 
