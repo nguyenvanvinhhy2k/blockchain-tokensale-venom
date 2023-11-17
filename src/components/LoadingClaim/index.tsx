@@ -3,15 +3,16 @@ import Modal from "../Modal";
 
 type IProps = {
   isLoadingClaim: boolean
+  handleCancel: any
 }
-export default function LoadingClaim({ isLoadingClaim }: IProps) {
+export default function LoadingClaim({ isLoadingClaim, handleCancel }: IProps) {
   return (
     <>
       <Modal
         display
         open={isLoadingClaim}
+        handleCancel={handleCancel}
         confirmButtonTitle="Confirm"
-        hidden={0}
         className="xl:w-[25%] lg:w-[45%] sm:w-[65%] w-[90%]"
       >
         <div className="px-[20px] py-[10px] ">
